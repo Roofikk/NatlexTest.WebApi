@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NatlexTest.WebApi", "NatlexTest.WebApi\NatlexTest.WebApi.csproj", "{A3A9118E-7BB9-45F3-BD84-574555FC94A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NatlexTest.DataEntities.Sqlite", "NatlexTest.DataEntities.Sqlite\NatlexTest.DataEntities.Sqlite.csproj", "{66907FAC-5E3E-4F60-857E-695FFE3AFC3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NatlexTest.DataContext", "NatlexTest.DataContext\NatlexTest.DataContext.csproj", "{78B1E29F-D3B1-41B3-ABEB-CFC70386E3BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3A9118E-7BB9-45F3-BD84-574555FC94A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3A9118E-7BB9-45F3-BD84-574555FC94A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3A9118E-7BB9-45F3-BD84-574555FC94A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3A9118E-7BB9-45F3-BD84-574555FC94A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66907FAC-5E3E-4F60-857E-695FFE3AFC3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66907FAC-5E3E-4F60-857E-695FFE3AFC3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66907FAC-5E3E-4F60-857E-695FFE3AFC3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66907FAC-5E3E-4F60-857E-695FFE3AFC3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78B1E29F-D3B1-41B3-ABEB-CFC70386E3BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78B1E29F-D3B1-41B3-ABEB-CFC70386E3BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78B1E29F-D3B1-41B3-ABEB-CFC70386E3BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78B1E29F-D3B1-41B3-ABEB-CFC70386E3BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E43E8E74-C9E6-4A62-A51D-DD1BD08AE7DB}
+	EndGlobalSection
+EndGlobal
