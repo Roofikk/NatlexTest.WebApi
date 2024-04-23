@@ -6,7 +6,7 @@ namespace NatlexTest.DataContext;
 public class BookContext : DbContext
 {
     public DbSet<Book> Books { get; set; }
-    public DbSet<ReservationRecord> History { get; set; }
+    public DbSet<BookHistory> Histories { get; set; }
 
     public BookContext()
         : base()
@@ -20,7 +20,10 @@ public class BookContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlite("Data Source=../books.db");
+        if (!optionsBuilder.IsConfigured)
+        {
+            optionsBuilder.UseSqlite("Data Source=../books.db");
+        }
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -30,16 +33,15 @@ public class BookContext : DbContext
         modelBuilder.Entity<Book>(e =>
         {
             e.HasKey(e => e.BookId);
-            e.Property(e => e.BookId).ValueGeneratedOnAdd();
         });
 
-        modelBuilder.Entity<ReservationRecord>(e =>
+        modelBuilder.Entity<BookHistory>(e =>
         {
-            e.HasKey(e => e.RecordId);
+            e.HasKey(e => e.HistoryId);
             e.Property(e => e.BookId).ValueGeneratedOnAdd();
 
             e.HasOne(e => e.Book)
-                .WithMany(e => e.ReservationRecords)
+                .WithMany(e => e.Histories)
                 .HasForeignKey(e => e.BookId)
                 .IsRequired();
         });

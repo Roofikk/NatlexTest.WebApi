@@ -2,14 +2,14 @@
 
 namespace NatlexTest.DataEntities.Sqlite;
 
-[Table("BookHistory")]
-public class ReservationRecord
+[Table("BookHistories")]
+public class BookHistory
 {
-    public int RecordId { get; set; }
-    public string Changes { get; set; } = null!;
+    public int HistoryId { get; set; }
+    public bool Reserved { get; set; }
     [Column(TypeName = "datetime")]
     public DateTime Date { get; set; }
 
-    public int BookId { get; set; }
+    public string BookId { get; set; } = null!;
     public Book Book { get; set; } = null!;
 }

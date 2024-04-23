@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NatlexTest.WebApi", "NatlexTest.WebApi\NatlexTest.WebApi.csproj", "{A3A9118E-7BB9-45F3-BD84-574555FC94A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NatlexTest.WebApi", "NatlexTest.WebApi\NatlexTest.WebApi.csproj", "{A3A9118E-7BB9-45F3-BD84-574555FC94A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NatlexTest.DataEntities.Sqlite", "NatlexTest.DataEntities.Sqlite\NatlexTest.DataEntities.Sqlite.csproj", "{66907FAC-5E3E-4F60-857E-695FFE3AFC3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NatlexTest.DataEntities.Sqlite", "NatlexTest.DataEntities.Sqlite\NatlexTest.DataEntities.Sqlite.csproj", "{66907FAC-5E3E-4F60-857E-695FFE3AFC3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NatlexTest.DataContext", "NatlexTest.DataContext\NatlexTest.DataContext.csproj", "{78B1E29F-D3B1-41B3-ABEB-CFC70386E3BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NatlexTest.DataContext", "NatlexTest.DataContext\NatlexTest.DataContext.csproj", "{78B1E29F-D3B1-41B3-ABEB-CFC70386E3BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NatlexTest.WebApi.Tests", "NatlexTest.WebApi.Tests\NatlexTest.WebApi.Tests.csproj", "{16F5D824-6F69-41F8-A3EB-C42A3D6455F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{78B1E29F-D3B1-41B3-ABEB-CFC70386E3BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78B1E29F-D3B1-41B3-ABEB-CFC70386E3BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78B1E29F-D3B1-41B3-ABEB-CFC70386E3BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16F5D824-6F69-41F8-A3EB-C42A3D6455F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16F5D824-6F69-41F8-A3EB-C42A3D6455F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16F5D824-6F69-41F8-A3EB-C42A3D6455F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16F5D824-6F69-41F8-A3EB-C42A3D6455F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

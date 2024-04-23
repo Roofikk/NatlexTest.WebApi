@@ -4,11 +4,15 @@ namespace NatlexTest.DataEntities.Sqlite;
 
 public class Book
 {
-    public int BookId { get; set; }
+    [Column(TypeName = "varchar(40)")]
+    public string BookId { get; set; } = null!;
     [Column(TypeName = "varchar(128)")]
-    public string Name { get; set; } = null!;
-    public string Comment { get; set; } = null!;
-    public bool IsReserved { get; set; }
+    public string Title { get; set; } = null!;
+    public string? Author { get; set; }
+    [Column(TypeName = "text")]
+    public string Comment { get; set; } = "";
+    [Column(TypeName = "integer")]
+    public bool Reserved { get; set; } = false;
 
-    public ICollection<ReservationRecord> ReservationRecords { get; } = [];
+    public ICollection<BookHistory> Histories { get; } = [];
 }
