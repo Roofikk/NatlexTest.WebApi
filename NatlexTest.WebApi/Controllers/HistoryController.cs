@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using NatlexTest.DataEntities.Sqlite;
 using NatlexTest.WebApi.Dto.History;
 using NatlexTest.WebApi.Services.HistoryService;
 
@@ -16,6 +15,11 @@ public class HistoryController : ControllerBase
         _historyService = historyService;
     }
 
+    /// <summary>
+    /// Get history of book reservations
+    /// </summary>
+    /// <param name="bookId">Book id</param>
+    /// <returns></returns>
     [HttpGet("history/{bookId}")]
     public async Task<ActionResult<IEnumerable<HistoryDto>>> GetHistory(string bookId)
     {

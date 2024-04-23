@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using NatlexTest.DataContext;
 using NatlexTest.DataEntities.Sqlite;
 using NatlexTest.WebApi.Dto;
-using NatlexTest.WebApi.Services.HistoryService;
 
 namespace NatlexTest.WebApi.Controllers;
 
@@ -44,7 +43,7 @@ public class BooksController : ControllerBase
     }
 
     /// <summary>
-    /// Get book</br>
+    /// Get book </br>
     /// GET: api/Books/5
     /// </summary>
     /// <param name="bookId">Book id</param>
@@ -63,7 +62,7 @@ public class BooksController : ControllerBase
     }
 
     /// <summary>
-    /// Create book</br>
+    /// Create book </br>
     /// POST: api/Books
     /// </summary>
     /// <param name="book"></param>
@@ -96,7 +95,7 @@ public class BooksController : ControllerBase
     }
 
     /// <summary>
-    /// Update book</br>
+    /// Update book </br>
     /// PUT: api/Books
     /// </summary>
     /// <param name="bookDto"></param>
@@ -123,7 +122,12 @@ public class BooksController : ControllerBase
         return Ok(MapBook(book));
     }
 
-    // DELETE: api/Books/5
+    /// <summary>
+    /// Delete book </br>
+    /// DELETE: api/Books/5
+    /// </summary>
+    /// <param name="bookId"></param>
+    /// <returns></returns>
     [HttpDelete("{bookId}")]
     public async Task<IActionResult> DeleteBook(string bookId)
     {

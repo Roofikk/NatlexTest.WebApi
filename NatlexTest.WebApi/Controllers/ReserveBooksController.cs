@@ -5,8 +5,6 @@ using NatlexTest.DataEntities.Sqlite;
 using NatlexTest.WebApi.Dto;
 using NatlexTest.WebApi.Services.HistoryService;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace NatlexTest.WebApi.Controllers;
 
 [Route("api/[controller]")]
@@ -30,10 +28,8 @@ public class ReserveBooksController : ControllerBase
     /// <param name="reserved">By default true</param>
     /// <returns></returns>
     [HttpGet()]
-    public async Task<ActionResult<IEnumerable<RetrieveReserveBookDto>>> Get([FromQuery] bool? reserved)
+    public async Task<ActionResult<IEnumerable<RetrieveReserveBookDto>>> GetBooks([FromQuery] bool? reserved = true)
     {
-        reserved ??= true;
-
         var books = await _context.Books
             .Where(b => b.Reserved == reserved)
             .ToListAsync();
@@ -50,7 +46,7 @@ public class ReserveBooksController : ControllerBase
             reserveBooks.Add(MapReserveBook(book));
         }
 
-        return reserveBooks;
+        return Ok(reserveBooks);
     }
 
     /// <summary>
@@ -60,7 +56,7 @@ public class ReserveBooksController : ControllerBase
     /// <param name="requestBook"></param>
     /// <returns></returns>
     [HttpPost()]
-    public async Task<IActionResult> ReserveBook(RequestReserveBookDto requestBook)
+    public async Task<ActionResult<RetrieveReserveBookDto>> ReserveBook(RequestReserveBookDto requestBook)
     {
         var book = await _context.Books.FindAsync(requestBook.BookId);
 
@@ -81,7 +77,7 @@ public class ReserveBooksController : ControllerBase
         await _historyService.PushHistoryAsync(book);
         await _context.SaveChangesAsync();
 
-        return Ok();
+        return Ok(MapReserveBook(book));
     }
 
     /// <summary>
@@ -106,7 +102,7 @@ public class ReserveBooksController : ControllerBase
         await _historyService.PushHistoryAsync(book);
         await _context.SaveChangesAsync();
 
-        return MapReserveBook(book);
+        return Ok(MapReserveBook(book));
     }
 
     private RetrieveReserveBookDto MapReserveBook(Book book)

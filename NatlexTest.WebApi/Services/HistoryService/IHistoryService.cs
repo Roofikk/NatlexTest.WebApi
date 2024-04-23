@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
-using NatlexTest.DataEntities.Sqlite;
+﻿using NatlexTest.DataEntities.Sqlite;
 
 namespace NatlexTest.WebApi.Services.HistoryService;
 

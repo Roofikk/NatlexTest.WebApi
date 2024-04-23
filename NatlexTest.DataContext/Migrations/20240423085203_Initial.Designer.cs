@@ -11,7 +11,7 @@ using NatlexTest.DataContext;
 namespace NatlexTest.DataContext.Migrations
 {
     [DbContext(typeof(BookContext))]
-    [Migration("20240423000747_Initial")]
+    [Migration("20240423085203_Initial")]
     partial class Initial
     {
         /// <inheritdoc />

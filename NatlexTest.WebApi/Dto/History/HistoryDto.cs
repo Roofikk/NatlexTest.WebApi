@@ -1,6 +1,4 @@
-﻿using NatlexTest.DataEntities.Sqlite;
-
-namespace NatlexTest.WebApi.Dto.History;
+﻿namespace NatlexTest.WebApi.Dto.History;
 
 public class HistoryDto
 {

@@ -1,9 +1,9 @@
-﻿using Moq;
+﻿using Microsoft.AspNetCore.Mvc;
+using Moq;
+using NatlexTest.DataEntities.Sqlite;
 using NatlexTest.WebApi.Controllers;
 using NatlexTest.WebApi.Dto.History;
 using NatlexTest.WebApi.Services.HistoryService;
-using Microsoft.AspNetCore.Mvc;
-using NatlexTest.DataEntities.Sqlite;
 
 namespace NatlexTest.WebApi.Tests.Controllers;
 

@@ -1,6 +1,4 @@
-﻿using NatlexTest.DataEntities.Sqlite;
-
-namespace NatlexTest.WebApi.Dto;
+﻿namespace NatlexTest.WebApi.Dto;
 
 public class RetrieveReserveBookDto
 {

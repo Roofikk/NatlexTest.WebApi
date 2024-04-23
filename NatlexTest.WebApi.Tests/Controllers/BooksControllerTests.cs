@@ -1,10 +1,8 @@
-using Xunit;
-using Moq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using NatlexTest.DataContext;
 using NatlexTest.DataEntities.Sqlite;
 using NatlexTest.WebApi.Controllers;
-using NatlexTest.DataContext;
 using NatlexTest.WebApi.Dto;
 
 namespace NatlexTest.WebApi.Tests.Controllers;
@@ -171,5 +169,36 @@ public class BooksControllerTests
         // Assert
         Assert.IsType<NotFoundObjectResult>(result.Result);
         Assert.Null(result.Value);
+    }
+
+    [Fact]
+    public async Task DeleteBook_ShouldReturnOk()
+    {
+        // Arrange
+        var book = new Book { BookId = "1", Title = "Book 1" };
+        await _context.Books.AddAsync(book);
+        await _context.SaveChangesAsync();
+
+        // Act
+        var result = await _booksController.DeleteBook(book.BookId);
+
+        // Assert
+        Assert.IsType<NoContentResult>(result);
+        Assert.Empty(await _context.Books.ToListAsync());
+    }
+
+    [Fact]
+    public async Task DeleteBook_ShouldReturnNotFound()
+    {
+        // Arrange
+        var book = new Book { BookId = "1", Title = "Book 1" };
+        await _context.Books.AddAsync(book);
+        await _context.SaveChangesAsync();
+
+        // Act
+        var result = await _booksController.DeleteBook("2");
+
+        // Assert
+        Assert.IsType<NotFoundResult>(result);
     }
 }
